@@ -10,8 +10,11 @@ class RavenColors {
 
   //primary colors
   static Color ravenPrimaryGreen = const Color(0xff0B8376);
+
+  static Color ravenPrimaryGreen1 = const Color(0xff0B8376);
   static Color ravenPrimaryGreen2 = const Color(0xFF004245);
   static Color ravenPrimaryGreen3 = const Color(0xFF067067);
+  static Color colorLimeGreen = const Color(0xFF69D384);
   static Color ravenPrimaryPurple = const Color(0xff755AE2);
   static Color ravenOrange = const Color(0xffEA872D);
   static Color ravenDeepGreen = const Color(0xff014345);
@@ -24,6 +27,7 @@ class RavenColors {
   static Color ravenGrey2 = const Color(0xffF7F8F7);
   static Color ravenGrey3 = const Color(0xFFB4B4B4);
   static Color ravenGrey4 = const Color(0xFF807E7E);
+  static const Color colorText = Color(0xFF383635);
   static Color ravenGreyLight1 = const Color(0xffF7F8F7);
   static Color ravenGreyLight2 = const Color.fromARGB(255, 249, 249, 249);
 
