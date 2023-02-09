@@ -5,9 +5,9 @@ class RavenText extends StatelessWidget {
   final String text;
   final TextStyle style;
   RavenText.headingOne(this.text, {super.key, Color? color, double? fontSize})
-      : style = heading1.copyWith(fontSize: fontSize, color: color);
+      : style = headling1.copyWith(fontSize: fontSize, color: color);
   RavenText.headingTwo(this.text, {super.key, Color? color, double? fontSize})
-      : style = heading2.copyWith(fontSize: fontSize, color: color);
+      : style = headling2.copyWith(fontSize: fontSize, color: color);
   RavenText.bodyText1(this.text,
       {super.key, Color? color, double? fontSize, FontWeight? fontWeight})
       : style = bodyText1.copyWith(

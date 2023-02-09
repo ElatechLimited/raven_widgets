@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-TextStyle heading1 = GoogleFonts.mulish(
+TextStyle headling1 = GoogleFonts.mulish(
   fontSize: 30,
   fontWeight: FontWeight.w700,
 );
-TextStyle heading2 = GoogleFonts.mulish(
+TextStyle headling2 = GoogleFonts.mulish(
   fontSize: 24,
   fontWeight: FontWeight.bold,
 );
