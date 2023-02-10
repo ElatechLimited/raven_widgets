@@ -27,7 +27,28 @@ class TextFieldExample extends StatelessWidget {
                 labelText: "Password",
                 hintText: "Enter Password",
                 isPasswordField: true,
-                controller: TextEditingController())
+                controller: TextEditingController()),
+            const Gap(8),
+            RavenTextField(
+                labelText: "Drop Down",
+                hintText: "Select Item",
+                suffixIcon: dropDownIcon(),
+                controller: TextEditingController()),
+            const Gap(8),
+            RavenTextField(
+                labelText: "Search TextField",
+                hintText: "Search Item here...",
+                prefixIcon: searchIcon(),
+                controller: TextEditingController()),
+            const Gap(8),
+            RavenTextField(
+                labelText: "Cancel TextField",
+                hintText: "cancle Item here...",
+                suffixIcon: cancelIcon(),
+                controller: TextEditingController()),
+            const Gap(8),
+            RavenPhoneTextField(
+                labelText: "Phone", controller: TextEditingController())
           ],
         ));
   }

@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+            backgroundColor: Colors.white,
             appBar: AppBar(
                 backgroundColor: RavenColors.ravenPrimaryGreen,
                 title: const Text("Raven Cook Book")),

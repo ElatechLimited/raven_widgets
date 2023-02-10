@@ -13,9 +13,16 @@ dependencies:
   gap: ^2.0.1
   google_fonts: ^4.0.3
   flutter_svg: ^1.0.3
-  intl: ^0.18.0
+  intl: ^0.17.0
   country_list: ^0.0.5
   pinput: ^2.2.12
+  jiffy: ^5.0.0
+  connectivity_plus: ^3.0.3
+  flutter_secure_storage: ^8.0.0
+  http: ^0.13.5
+  mime: ^1.0.4
+  http_parser: ^4.0.2
+  selfie_liveness: ^3.3.7
 
 
 dev_dependencies: 

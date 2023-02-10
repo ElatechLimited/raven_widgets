@@ -27,6 +27,9 @@ class RavenColors {
   static Color ravenGrey2 = const Color(0xffF7F8F7);
   static Color ravenGrey3 = const Color(0xFFB4B4B4);
   static Color ravenGrey4 = const Color(0xFF807E7E);
+  static Color ravenGrey5 = const Color(0xffCCCCCC);
+  static Color ravenLabelColor = const Color(0xff011F3D);
+  static Color ravenTextFieldColor = const Color(0xff020202);
   static const Color colorText = Color(0xFF383635);
   static Color ravenGreyLight1 = const Color(0xffF7F8F7);
   static Color ravenGreyLight2 = const Color.fromARGB(255, 249, 249, 249);

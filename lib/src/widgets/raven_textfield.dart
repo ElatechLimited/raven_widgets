@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:raven_widgets/raven_widgets.dart';
 import 'package:raven_widgets/src/themes/text_styles.dart';
 
@@ -21,10 +20,11 @@ class RavenTextField extends StatefulWidget {
     this.minLines,
     this.labelText = '',
     this.suffixIcon,
+    this.prefixIcon,
     this.validator,
     this.onTap,
     this.contentPadding =
-        const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+        const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
     this.inputFormatters,
     this.onChanged,
     this.readOnly = false,
@@ -45,7 +45,7 @@ class RavenTextField extends StatefulWidget {
   final int? maxLength;
   final int? maxLines;
   final int? minLines;
-
+  final Widget? prefixIcon;
   final bool enabled;
   final bool? autoFocus;
   final EdgeInsets contentPadding;
@@ -80,104 +80,114 @@ class _RavenTextFieldState extends State<RavenTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Text(
-              widget.labelText,
-              style: bodyText1.copyWith(
-                  fontSize: 14,
-                  color: Colors.black87.withOpacity(0.6),
-                  fontWeight: FontWeight.w500),
-            ),
-            if (widget.isRequiredField) ...[
-              const Gap(
-                2,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(
+                widget.labelText,
+                style: bodyText1.copyWith(
+                    fontSize: 14,
+                    color: RavenColors.ravenLabelColor,
+                    fontWeight: FontWeight.w400),
               ),
-            ]
-          ],
-        ),
-        const SizedBox(
-          height: 6,
-        ),
-        TextFormField(
-          validator: widget.validator,
-          onChanged: widget.onChanged,
-          readOnly: widget.readOnly,
-          onTap: widget.onTap,
-          minLines: widget.minLines,
-          inputFormatters: widget.inputFormatters,
-          style: bodyText1.copyWith(
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-            color: RavenColors.ravenPrimaryGreen,
+              if (widget.isRequiredField) ...[
+                const Gap(
+                  2,
+                ),
+              ]
+            ],
           ),
-          obscureText: obscure,
-          keyboardType: widget.inputType,
-          enabled: widget.enabled,
-          maxLength: widget.maxLength,
-          maxLines: widget.isPasswordField ? 1 : widget.maxLines,
-          controller: widget.controller,
-          textInputAction: widget.inputAction,
-          textCapitalization: widget.textCapitalization,
-          decoration: InputDecoration(
-            contentPadding: widget.contentPadding,
-            counterText: widget.counterText,
-            suffixIcon: widget.suffixIcon ?? getSuffixIcon(),
-            suffixIconConstraints: const BoxConstraints(
-              minWidth: 40,
-              minHeight: 40,
-              maxHeight: 50,
-              maxWidth: 50,
-            ),
-            fillColor: const Color(0xffF9F9F9),
-            filled: true,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-            ),
-            hintStyle: bodyText1.copyWith(
-              color: RavenColors.ravenGrey3,
-              fontWeight: FontWeight.w600,
-              fontSize: 14,
-            ),
-            hintText: widget.isPasswordField ? '*********' : widget.hintText,
-            errorStyle: const TextStyle(color: Colors.red),
-            counterStyle: bodyText1.copyWith(fontWeight: FontWeight.w600),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-              borderSide:
-                  BorderSide(color: RavenColors.ravenPrimaryGreen3, width: .8),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-              borderSide: BorderSide(
-                color: RavenColors.ravenGrey4.withOpacity(.3),
-                width: .8,
-              ),
-            ),
-            disabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-              borderSide: const BorderSide(
-                color: Color(0xffF9F9F9),
-                width: 1.2,
-              ),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-              borderSide: BorderSide(
-                  color: Colors.red[300] ?? Colors.red.withOpacity(0.5),
-                  width: 1.2),
-            ),
-            focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-              borderSide: BorderSide(
-                  color: Colors.red[300] ?? Colors.red.withOpacity(0.5),
-                  width: 1.2),
-            ),
+          const SizedBox(
+            height: 6,
           ),
-        )
-      ],
+          TextFormField(
+            validator: widget.validator,
+            onChanged: widget.onChanged,
+            readOnly: widget.readOnly,
+            onTap: widget.onTap,
+            minLines: widget.minLines,
+            inputFormatters: widget.inputFormatters,
+            style: bodyText1.copyWith(
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: RavenColors.ravenTextFieldColor,
+            ),
+            obscureText: obscure,
+            keyboardType: widget.inputType,
+            enabled: widget.enabled,
+            maxLength: widget.maxLength,
+            maxLines: widget.isPasswordField ? 1 : widget.maxLines,
+            controller: widget.controller,
+            textInputAction: widget.inputAction,
+            textCapitalization: widget.textCapitalization,
+            decoration: InputDecoration(
+              contentPadding: widget.contentPadding,
+              counterText: widget.counterText,
+              prefixIcon: widget.prefixIcon,
+              prefixIconConstraints: const BoxConstraints(
+                minWidth: 40,
+                minHeight: 45,
+                maxHeight: 50,
+                maxWidth: 74,
+              ),
+              suffixIcon: widget.suffixIcon ?? getSuffixIcon(),
+              suffixIconConstraints: const BoxConstraints(
+                minWidth: 50,
+                minHeight: 40,
+                maxHeight: 50,
+                maxWidth: 74,
+              ),
+              fillColor: const Color(0xffF7F8F7),
+              filled: true,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              hintStyle: bodyText1.copyWith(
+                color: RavenColors.ravenGrey1.withOpacity(0.5),
+                fontWeight: FontWeight.w400,
+                fontSize: 14,
+              ),
+              hintText: widget.isPasswordField ? '*********' : widget.hintText,
+              errorStyle: const TextStyle(color: Colors.red),
+              counterStyle: bodyText1.copyWith(fontWeight: FontWeight.w600),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(
+                    color: RavenColors.ravenPrimaryGreen3, width: .8),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(
+                  color: RavenColors.ravenGrey5,
+                  width: 1,
+                ),
+              ),
+              disabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(4),
+                borderSide: const BorderSide(
+                  color: Color(0xffF9F9F9),
+                  width: 1.2,
+                ),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(4),
+                borderSide: BorderSide(
+                    color: Colors.red[300] ?? Colors.red.withOpacity(0.5),
+                    width: 1.2),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(4),
+                borderSide: BorderSide(
+                    color: Colors.red[300] ?? Colors.red.withOpacity(0.5),
+                    width: 1.2),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 
@@ -195,11 +205,10 @@ class _RavenTextFieldState extends State<RavenTextField> {
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: SizedBox(
-              child: SvgPicture.asset(
-                'assets/svgs/eye_off.svg',
-                package: 'raven_widgets',
-              ),
-            ),
+                child: RavenText.bodyText1("Show",
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13.5,
+                    color: RavenColors.ravenPrimaryGreen)),
           ),
         );
       } else {
@@ -209,15 +218,59 @@ class _RavenTextFieldState extends State<RavenTextField> {
               obscure = !obscure;
             });
           },
-          // child: Padding(
-          //   padding: const EdgeInsets.all(10),
-          //   child: SizedBox(
-          //     child: SvgPicture.asset(
-          //         'packages/raven_widgets/assets/svgs/eye_off.svg'),
-          //   ),
-          // ),
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: SizedBox(
+                child: SizedBox(
+                    child: RavenText.bodyText1("Hide",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 13.5,
+                        color: RavenColors.ravenPrimaryGreen))),
+          ),
         );
       }
     }
   }
+}
+
+Widget dropDownIcon({double height = 12, double width = 12}) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Image.asset(
+        "packages/raven_widgets/assets/images/drop_down.png",
+        height: height,
+        width: width,
+        color: RavenColors.ravenGrey1,
+      ),
+    ],
+  );
+}
+
+Widget searchIcon({double height = 18, double width = 18}) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Image.asset(
+        "packages/raven_widgets/assets/images/search.png",
+        height: height,
+        width: width,
+        color: RavenColors.ravenGrey1,
+      ),
+    ],
+  );
+}
+
+Widget cancelIcon({double height = 10, double width = 10}) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Image.asset(
+        "packages/raven_widgets/assets/images/cancel.png",
+        height: height,
+        width: width,
+        color: RavenColors.ravenGrey1,
+      ),
+    ],
+  );
 }

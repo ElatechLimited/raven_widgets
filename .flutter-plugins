@@ -1,7 +1,15 @@
 # This is a generated file; do not edit or check into version control.
+connectivity_plus=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity_plus-3.0.3/
+flutter_image_compress=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_image_compress-1.1.3/
+flutter_secure_storage=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage-8.0.0/
+flutter_secure_storage_linux=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage_linux-1.1.3/
+flutter_secure_storage_macos=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage_macos-3.0.0/
+flutter_secure_storage_web=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage_web-1.1.1/
+flutter_secure_storage_windows=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage_windows-2.0.0/
 path_provider=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.12/
 path_provider_android=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.22/
 path_provider_foundation=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_foundation-2.1.1/
 path_provider_linux=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.7/
 path_provider_windows=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.3/
+selfie_liveness=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/selfie_liveness-3.3.7/
 smart_auth=/Users/confidencewangoho/tools/flutter/.pub-cache/hosted/pub.dartlang.org/smart_auth-1.0.8/
