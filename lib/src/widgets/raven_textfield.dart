@@ -203,11 +203,11 @@ class _RavenTextFieldState extends State<RavenTextField> {
             });
           },
           child: Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(13),
             child: SizedBox(
                 child: RavenText.bodyText1("SHOW",
                     fontWeight: FontWeight.w400,
-                    fontSize: 13.5,
+                    fontSize: 13,
                     color: RavenColors.ravenPrimaryGreen)),
           ),
         );
@@ -219,12 +219,12 @@ class _RavenTextFieldState extends State<RavenTextField> {
             });
           },
           child: Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(13),
             child: SizedBox(
                 child: SizedBox(
                     child: RavenText.bodyText1("HIDE",
                         fontWeight: FontWeight.w400,
-                        fontSize: 13.5,
+                        fontSize: 13,
                         color: RavenColors.ravenPrimaryGreen))),
           ),
         );
