@@ -10,6 +10,8 @@ class RavenPinWidget extends StatelessWidget {
     required this.onChanged,
     required this.onComplete,
     this.pinLength = 6,
+    this.height = 40,
+    this.width = 40,
     this.autoFocus = true,
     this.useNativeKeypad = true,
   }) : super(key: key);
@@ -20,6 +22,8 @@ class RavenPinWidget extends StatelessWidget {
   final Function(String?) onComplete;
   final bool useNativeKeypad;
   final bool autoFocus;
+  final double height;
+  final double width;
   final int pinLength;
 
   @override
@@ -27,8 +31,8 @@ class RavenPinWidget extends StatelessWidget {
     return Pinput(
       obscureText: true,
       submittedPinTheme: PinTheme(
-        height: 35,
-        width: 35,
+        height: height,
+        width: width,
         decoration: BoxDecoration(
           border: Border.all(color: RavenColors.ravenGrey4.withOpacity(.3)),
           color: const Color(0xffF9F9F9),
@@ -36,8 +40,8 @@ class RavenPinWidget extends StatelessWidget {
         ),
       ),
       focusedPinTheme: PinTheme(
-        height: 35,
-        width: 35,
+        height: height,
+        width: width,
         decoration: BoxDecoration(
           border: Border.all(color: RavenColors.ravenGrey4.withOpacity(.3)),
           color: const Color(0xffF9F9F9),
@@ -45,16 +49,16 @@ class RavenPinWidget extends StatelessWidget {
         ),
       ),
       followingPinTheme: PinTheme(
-          height: 35,
-          width: 35,
+          height: height,
+          width: width,
           decoration: BoxDecoration(
             border: Border.all(color: RavenColors.ravenGrey4.withOpacity(.1)),
             color: const Color(0xffF9F9F9),
             borderRadius: BorderRadius.circular(8),
           )),
       disabledPinTheme: PinTheme(
-        height: 35,
-        width: 35,
+        height: height,
+        width: width,
         decoration: BoxDecoration(
           border: Border.all(color: RavenColors.ravenGrey4.withOpacity(.3)),
           color: const Color(0xffF9F9F9),
@@ -71,8 +75,8 @@ class RavenPinWidget extends StatelessWidget {
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: RavenColors.ravenColorText),
-          height: 35,
-          width: 35,
+          height: height,
+          width: width,
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
           margin: const EdgeInsets.fromLTRB(0, 8, 0, 8)),
       onSubmitted: onSubmit,

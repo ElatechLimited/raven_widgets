@@ -31,7 +31,22 @@ class TextFieldExample extends StatelessWidget {
             const Gap(8),
             RavenTextField(
                 labelText: "Drop Down",
+                inputType: TextInputType.none,
                 hintText: "Select Item",
+                onTap: () {
+                  showRavenBottomSheet(context,
+                      child: const RavenSimpleListTile(
+                        thisList: [
+                          "Collect business payments",
+                          "Agency banking",
+                          "Collect business payments",
+                          "Agency banking",
+                          "Collect business payments",
+                          "Agency banking",
+                        ],
+                        containerHeight: 250,
+                      ));
+                },
                 suffixIcon: dropDownIcon(),
                 controller: TextEditingController()),
             const Gap(8),
@@ -48,7 +63,15 @@ class TextFieldExample extends StatelessWidget {
                 controller: TextEditingController()),
             const Gap(8),
             RavenPhoneTextField(
-                labelText: "Phone", controller: TextEditingController())
+                labelText: "Phone", controller: TextEditingController()),
+            const Gap(24),
+            RavenPinWidget(
+                height: 40,
+                width: 40,
+                pinController: TextEditingController(),
+                onSubmit: (val) {},
+                onChanged: (val) {},
+                onComplete: (val) {})
           ],
         ));
   }

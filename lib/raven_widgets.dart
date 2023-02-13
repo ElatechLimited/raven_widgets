@@ -24,6 +24,7 @@ export 'src/widgets/raven_divider.dart';
 export 'src/widgets/raven_progress_dialog.dart';
 export 'src/widgets/raven_snackbar.dart';
 export 'src/widgets/raven_stacked_widget.dart';
+export 'src/widgets/raven_simple_list_tile.dart';
 export 'src/helpers/helper_method.dart';
 export 'src/helpers/country_emoji.dart';
 export 'package:gap/src/widgets/gap.dart';

@@ -205,8 +205,8 @@ class _RavenTextFieldState extends State<RavenTextField> {
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: SizedBox(
-                child: RavenText.bodyText1("Show",
-                    fontWeight: FontWeight.w600,
+                child: RavenText.bodyText1("SHOW",
+                    fontWeight: FontWeight.w400,
                     fontSize: 13.5,
                     color: RavenColors.ravenPrimaryGreen)),
           ),
@@ -222,8 +222,8 @@ class _RavenTextFieldState extends State<RavenTextField> {
             padding: const EdgeInsets.all(10),
             child: SizedBox(
                 child: SizedBox(
-                    child: RavenText.bodyText1("Hide",
-                        fontWeight: FontWeight.w600,
+                    child: RavenText.bodyText1("HIDE",
+                        fontWeight: FontWeight.w400,
                         fontSize: 13.5,
                         color: RavenColors.ravenPrimaryGreen))),
           ),
