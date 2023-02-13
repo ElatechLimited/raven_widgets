@@ -1,4 +1,3 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 import 'package:jiffy/jiffy.dart';
@@ -252,18 +251,5 @@ class RavenHelperMethod {
 
     var diff = d.difference(DateTime.now()).inHours;
     return diff.toString();
-  }
-
-  static Future<bool> checkInternetConnection() async {
-    bool networkStatus = false;
-    var connectivityResult = await (Connectivity().checkConnectivity());
-    if (connectivityResult != ConnectivityResult.mobile &&
-        connectivityResult != ConnectivityResult.wifi) {
-      networkStatus = false;
-    } else {
-      networkStatus = true;
-    }
-
-    return networkStatus;
   }
 }
