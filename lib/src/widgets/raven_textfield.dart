@@ -161,7 +161,7 @@ class _RavenTextFieldState extends State<RavenTextField> {
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
-                  color: RavenColors.ravenGrey5,
+                  color: RavenColors.ravenGrey5.withOpacity(0.5),
                   width: 1,
                 ),
               ),
